@@ -18,3 +18,13 @@ kubectl exec -it -n kube-systemnginx-ingress-controller-{random-gen} sh
 ```bash
 curl -X GET https://192.168.99.100/echo -k
 ```
+
+## Change to http
+
+```yaml
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+```
+
+Add these both line on annotation part of ingress
+
